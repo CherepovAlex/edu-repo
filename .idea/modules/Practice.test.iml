@@ -7,7 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../Practice/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../Practice/src/test/resources" type="java-test-resource" />
     </content>
-    <orderEntry type="jdk" jdkName="21 (2)" jdkType="JavaSDK" />
+    <orderEntry type="jdk" jdkName="22" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Practice.main" />
     <orderEntry type="library" name="Gradle: org.junit.jupiter:junit-jupiter:5.10.0" level="project" />
