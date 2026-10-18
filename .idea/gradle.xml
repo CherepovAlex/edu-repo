@@ -5,12 +5,12 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/Practice" />
-        <option name="gradleHome" value="$PROJECT_DIR$/../Gradle/gradle-8.10.2" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/Practice" />
           </set>
         </option>
+        <option name="myGradleHome" value="C:\Gradle\gradle-8.14.2" />
       </GradleProjectSettings>
     </option>
   </component>
