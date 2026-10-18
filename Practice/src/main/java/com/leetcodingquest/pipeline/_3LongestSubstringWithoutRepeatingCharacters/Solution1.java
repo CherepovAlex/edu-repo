@@ -1,4 +1,4 @@
-package com.leetcodingquest.pipeline._LongestSubstringWithoutRepeatingCharacters;
+package com.leetcodingquest.pipeline._3LongestSubstringWithoutRepeatingCharacters;
 
 public class Solution1 {
     // время O(n), пространство O(n)

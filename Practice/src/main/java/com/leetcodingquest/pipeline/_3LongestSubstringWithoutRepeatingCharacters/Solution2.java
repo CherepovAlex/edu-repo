@@ -1,4 +1,4 @@
-package com.leetcodingquest.pipeline._LongestSubstringWithoutRepeatingCharacters;
+package com.leetcodingquest.pipeline._3LongestSubstringWithoutRepeatingCharacters;
 
 import java.util.HashMap;
 
