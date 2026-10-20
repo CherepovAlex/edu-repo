@@ -1,0 +1,115 @@
+package com.leetcodingquest.pipeline._8StringToIntegerAtoi;
+
+public class Solution2 {
+    // время O(n), память O(1)
+    // Объявляем метод, преобразующий строку в int
+    public int myAtoi(String s) {
+        // Если строка null или пустая, возвращаем 0, так как преобразовать нечего
+        if (s == null || s.isEmpty()) return 0;
+
+        // Переменная для хранения текущего индекса в строке
+        int index = 0;
+        // Длина строки для контроля выхода за границы
+        int n = s.length();
+        // Переменная для знака результата: 1 для плюса, -1 для минуса
+        int sign = 1;
+        // Переменная для накапливаемого результата преобразования
+        int result = 0;
+
+        // Цикл пропускает все начальные пробелы
+        while (index < n && s.charAt(index) == ' ') {
+            // Увеличиваем индекс, пока текущий символ является пробелом
+            index++;
+        }
+
+        // Если после пропуска пробелов мы достигли конца строки, возвращаем 0
+        if (index == n) {
+            return 0;
+        }
+
+        // Проверяем первый значащий символ на наличие знака
+        if (s.charAt(index) == '-') {
+            // Если найден минус, устанавливаем знак отрицательным
+            sign = -1;
+            // Переходим к следующему символу (цифре)
+            index++;
+        } else if (s.charAt(index) == '+') {
+            // Если найден плюс, знак остается положительным (по умолчанию 1)
+            // Просто переходим к следующему символу
+            index++;
+        }
+
+        // Цикл читает цифры до конца строки или до нецифрового символа
+        while (index < n && Character.isDigit(s.charAt(index))) {
+            // Получаем текущий символ
+            char c = s.charAt(index);
+            // Преобразуем символ цифры ('0'-'9') в соответствующее целое число (0-9)
+            int digit = c - '0';
+
+            // Проверка на переполнение перед выполнением умножения и сложения
+            // Максимальное значение int: 2147483647
+            // Минимальное значение int: -2147483648
+
+            // Если текущий результат больше, чем MAX_VALUE / 10,
+            // то при умножении на 10 он точно превысит MAX_VALUE
+            if (result > Integer.MAX_VALUE / 10) {
+                // Если знак положительный, возвращаем максимальное значение
+                if (sign == 1) {
+                    return Integer.MAX_VALUE;
+                }
+                // Если знак отрицательный, нужно проверить конкретную цифру
+                // Для отрицательных чисел граница -2147483648
+                // Если результат равен 214748364 (MAX_VALUE / 10), то:
+                // 214748364 * 10 + digit = 2147483640 + digit
+                // Если digit > 8, то 2147483649 > 2147483648 -> переполнение -> MIN_VALUE
+                if (sign == -1 && digit > 8) {
+                    return Integer.MIN_VALUE;
+                }
+                // Если digit <= 8, то число допустимо (например, -2147483648)
+                // Но так как мы здесь, значит result > MAX_VALUE/10, что для sign=-1
+                // тоже может быть проблемой, если result > 214748364
+                // Однако, если result > 214748364, то result * 10 уже > 2147483640
+                // и добавление любой цифры сделает модуль числа > 2147483648
+                // Поэтому, если result > MAX_VALUE / 10, это переполнение для обоих знаков,
+                // кроме случая result == MAX_VALUE/10 и sign == -1 и digit <= 8.
+                // Но в условии выше мы уже проверили result > MAX_VALUE/10.
+                // Если result > 214748364, то это переполнение.
+                // Давайте упростим проверку:
+            }
+
+            // Более компактная и надежная проверка переполнения:
+            // Если мы добавим digit, превысим ли мы границы?
+            // Для positive: result * 10 + digit > 2147483647
+            // Для negative: result * 10 + digit > 2147483648 (по модулю)
+
+            // Проверяем: result > (MAX_VALUE - digit) / 10
+            // Это эквивалентно: result * 10 + digit > MAX_VALUE
+            if (result > Integer.MAX_VALUE / 10 ||
+                    (result == Integer.MAX_VALUE / 10 && digit > (sign == 1 ? 7 : 8))) {
+                return sign == 1 ? Integer.MAX_VALUE : Integer.MIN_VALUE;
+            }
+
+            // Обновляем результат: сдвигаем текущие цифры влево (умножаем на 10) и добавляем новую цифру
+            result = result * 10 + digit;
+
+            // Переходим к следующему символу в строке
+            index++;
+        }
+
+        // Возвращаем итоговое число с учетом знака
+        return result * sign;
+    }
+
+    public static void main(String[] args) {
+        String s = "42";
+        System.out.println(new com.leetcodingquest.pipeline._8StringToIntegerAtoi.Solution().myAtoi(s)); // 42
+        s = " -042";
+        System.out.println(new com.leetcodingquest.pipeline._8StringToIntegerAtoi.Solution().myAtoi(s)); // -42
+        s = "1337c0d3";
+        System.out.println(new com.leetcodingquest.pipeline._8StringToIntegerAtoi.Solution().myAtoi(s)); // 1337
+        s = "0-1";
+        System.out.println(new com.leetcodingquest.pipeline._8StringToIntegerAtoi.Solution().myAtoi(s)); // 0
+        s = "words and 987";
+        System.out.println(new com.leetcodingquest.pipeline._8StringToIntegerAtoi.Solution().myAtoi(s)); // 0
+    }
+}
