@@ -1,4 +1,4 @@
-package com.leetcodingquest.pipeline._9PalindromeNumber;
+package com.leetcodingquest.pipeline.Math._9PalindromeNumber;
 
 public class Solution1 {
     // время O(log10(x)), память O(1)
