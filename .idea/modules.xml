@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Netology.iml" filepath="$PROJECT_DIR$/Netology.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Netology.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Netology.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Netology.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Netology.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/Practice.iml" filepath="$PROJECT_DIR$/Practice.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Practice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Practice.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Practice.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Practice.test.iml" />

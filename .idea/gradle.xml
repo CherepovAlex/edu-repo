@@ -4,6 +4,15 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Netology" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Netology" />
+          </set>
+        </option>
+        <option name="myGradleHome" value="C:\Gradle\gradle-8.14.2" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/Practice" />
         <option name="modules">
           <set>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="Netology:main" external.linked.project.path="$MODULE_DIR$/../../Netology" external.root.project.path="$MODULE_DIR$/../../Netology" external.system.id="GRADLE" external.system.module.group="com.leetcodingquest.pipeline" external.system.module.type="sourceSet" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../../Netology/build/classes/java/main" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../Netology/src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../Netology/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Netology/src/main/resources" type="java-resource" />
+    </content>
+    <orderEntry type="jdk" jdkName="22" jdkType="JavaSDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
