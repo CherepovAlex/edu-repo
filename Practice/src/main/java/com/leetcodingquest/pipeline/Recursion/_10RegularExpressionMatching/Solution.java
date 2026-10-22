@@ -1,4 +1,4 @@
-package com.leetcodingquest.pipeline._10RegularExpressionMatching;
+package com.leetcodingquest.pipeline.Recursion._10RegularExpressionMatching;
 
 public class Solution {
     // время O(m * n), память O(n)
